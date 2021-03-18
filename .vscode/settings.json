@@ -1,0 +1,15 @@
+{
+    "liveServer.settings.multiRootWorkspaceName": "psi",
+    "css.remoteStyleSheets": [
+        "https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      ],
+      "editor.quickSuggestions": {
+        "strings": true
+    },
+    "tailwindCSS.includeLanguages": {
+        "blade": "html",
+        "php": "html",
+        "vue": "html",
+        "plaintext": "html"
+      },
+}
