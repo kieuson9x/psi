@@ -1,26 +1,24 @@
 <?php
-   require APPROOT . '/views/includes/head.php';
+require APPROOT . '/views/base/head.php';
 ?>
 
 <div class="navbar dark">
     <?php
-       require APPROOT . '/views/includes/navigation.php';
+    require APPROOT . '/views/base/navigation.php';
     ?>
 </div>
 
 <div class="container">
-    <?php if(isLoggedIn()): ?>
+    <?php if (isLoggedIn()) : ?>
         <a class="btn green" href="<?php echo URLROOT; ?>/posts/create">
             Create
         </a>
     <?php endif; ?>
 
-    <?php foreach($data['posts'] as $post): ?>
+    <?php foreach ($data['posts'] as $post) : ?>
         <div class="container-item">
-            <?php if(isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post->user_id): ?>
-                <a
-                    class="btn orange"
-                    href="<?php echo URLROOT . "/posts/update/" . $post->id ?>">
+            <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post->user_id) : ?>
+                <a class="btn orange" href="<?php echo URLROOT . "/posts/update/" . $post->id ?>">
                     Update
                 </a>
                 <form action="<?php echo URLROOT . "/posts/delete/" . $post->id ?>" method="POST">

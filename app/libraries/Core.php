@@ -6,20 +6,24 @@
    */
 class Core
 {
-  protected $currentController = 'Pages';
+  protected $currentController = 'PagesController';
   protected $currentMethod = 'index';
   protected $params = [];
 
   public function __construct()
   {
-    //print_r($this->getUrl());
-
     $url = $this->getUrl();
+    $params = $this->getParams();
+
+    $controllerName = preg_replace("/-+/", " ", $this->data_get($url, '0'));
+    $controllerName = ucwords($controllerName);
+    $controllerName = preg_replace('/\s+/', '', $controllerName);
+    $controllerName = $controllerName . "Controller";
 
     // Look in BLL for first value
-    if (isset($url[0]) && file_exists('app/controllers/' . ucwords($url[0]) . '.php')) {
+    if (file_exists('app/controllers/' . $controllerName . '.php')) {
       // If exists, set as controller
-      $this->currentController = ucwords($url[0]);
+      $this->currentController = $controllerName;
       // Unset 0 Index
       unset($url[0]);
     }
@@ -41,25 +45,48 @@ class Core
     }
 
     // Get params
-    $this->params = $url ? array_values($url) : [];
+    $this->params = !empty($params) ? ['params' => $params] : [];
 
     // Call a callback with array of params
     call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
+  }
+
+  public function data_get($data, $path)
+  {
+    return array_reduce(explode('.', $path), function ($o, $p) {
+      return $o->$p ?? $o[$p] ?? false;
+    }, $data);
   }
 
   public function getUrl()
   {
     if (isset($_SERVER['REQUEST_URI'])) {
       $url = rtrim($_SERVER['REQUEST_URI'], '/');
+      $url = parse_url($url, PHP_URL_PATH);
+
       $url = filter_var($url, FILTER_SANITIZE_URL);
       $url = explode('/', $url);
 
-      $data = array_filter($url, function ($var) {
+      $url = array_values(array_filter($url, function ($var) {
         return ($var !== NULL && $var !== FALSE && $var !== "");
-      });
+      }));
 
-      return array_values($data);
-      // return $url;
+      return $url;
+    }
+  }
+
+  public function getParams()
+  {
+    if (isset($_SERVER['REQUEST_URI'])) {
+      $url = rtrim($_SERVER['REQUEST_URI'], '/');
+      $query = parse_url($url, PHP_URL_QUERY);
+
+      if (!is_null($query)) {
+        parse_str($query, $queryArr);
+        return $queryArr;
+      } else {
+        return [];
+      }
     }
   }
 }

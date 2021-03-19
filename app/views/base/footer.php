@@ -25,7 +25,7 @@
                 $('#sidebar').toggleClass('active');
                 $('.main-panel').toggleClass('full-panel');
             });
-            $('.sidebar').addClass('sidebar-offcanvas');
+            // $('.sidebar').addClass('sidebar-offcanvas');
         } else {
             $('.sidebar').removeClass('sidebar-offcanvas');
             $('.navbar-toggler').on('click', function() {
@@ -37,9 +37,9 @@
 
     $(window).resize(function() {
         if (window.matchMedia('(max-width: 991px)').matches) {
-            $('.sidebar').addClass('sidebar-offcanvas');
+            // $('.sidebar').addClass('sidebar-offcanvas');
         } else {
-            $('.sidebar').removeClass('sidebar-offcanvas');
+            // $('.sidebar').removeClass('sidebar-offcanvas');
         }
     });
 </script>

@@ -64,9 +64,11 @@
             }
 
         }
+    }
+}
 
-
-
-
+.dropdown-menu[aria-labelledby="avatar-dropdown"] {
+    &.show {
+        position: absolute;
     }
 }

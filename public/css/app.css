@@ -207,6 +207,10 @@
   }
 }
 
+.dropdown-menu[aria-labelledby="avatar-dropdown"].show {
+  position: absolute;
+}
+
 .sidebar {
   min-height: calc(100vh - 63px);
   background: -webkit-gradient(linear, left bottom, left top, from(#5768f3), to(#1c45ef));

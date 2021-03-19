@@ -1,10 +1,13 @@
 <?php
-class Posts extends Controller {
-    public function __construct() {
+class PostsController extends Controller
+{
+    public function __construct()
+    {
         $this->postModel = $this->model('Post');
     }
 
-    public function index() {
+    public function index()
+    {
         $posts = $this->postModel->findAllPosts();
 
         $data = [
@@ -14,8 +17,9 @@ class Posts extends Controller {
         $this->view('posts/index', $data);
     }
 
-    public function create() {
-        if(!isLoggedIn()) {
+    public function create()
+    {
+        if (!isLoggedIn()) {
             header("Location: " . URLROOT . "/posts");
         }
 
@@ -26,7 +30,7 @@ class Posts extends Controller {
             'bodyError' => ''
         ];
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
@@ -37,11 +41,11 @@ class Posts extends Controller {
                 'bodyError' => ''
             ];
 
-            if(empty($data['title'])) {
+            if (empty($data['title'])) {
                 $data['titleError'] = 'The title of a post cannot be empty';
             }
 
-            if(empty($data['body'])) {
+            if (empty($data['body'])) {
                 $data['bodyError'] = 'The body of a post cannot be empty';
             }
 
@@ -59,13 +63,14 @@ class Posts extends Controller {
         $this->view('posts/create', $data);
     }
 
-    public function update($id) {
+    public function update($id)
+    {
 
         $post = $this->postModel->findPostById($id);
 
-        if(!isLoggedIn()) {
+        if (!isLoggedIn()) {
             header("Location: " . URLROOT . "/posts");
-        } elseif($post->user_id != $_SESSION['user_id']){
+        } elseif ($post->user_id != $_SESSION['user_id']) {
             header("Location: " . URLROOT . "/posts");
         }
 
@@ -77,7 +82,7 @@ class Posts extends Controller {
             'bodyError' => ''
         ];
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
@@ -90,19 +95,19 @@ class Posts extends Controller {
                 'bodyError' => ''
             ];
 
-            if(empty($data['title'])) {
+            if (empty($data['title'])) {
                 $data['titleError'] = 'The title of a post cannot be empty';
             }
 
-            if(empty($data['body'])) {
+            if (empty($data['body'])) {
                 $data['bodyError'] = 'The body of a post cannot be empty';
             }
 
-            if($data['title'] == $this->postModel->findPostById($id)->title) {
+            if ($data['title'] == $this->postModel->findPostById($id)->title) {
                 $data['titleError'] == 'At least change the title!';
             }
 
-            if($data['body'] == $this->postModel->findPostById($id)->body) {
+            if ($data['body'] == $this->postModel->findPostById($id)->body) {
                 $data['bodyError'] == 'At least change the body!';
             }
 
@@ -120,13 +125,14 @@ class Posts extends Controller {
         $this->view('posts/update', $data);
     }
 
-    public function delete($id) {
+    public function delete($id)
+    {
 
         $post = $this->postModel->findPostById($id);
 
-        if(!isLoggedIn()) {
+        if (!isLoggedIn()) {
             header("Location: " . URLROOT . "/posts");
-        } elseif($post->user_id != $_SESSION['user_id']){
+        } elseif ($post->user_id != $_SESSION['user_id']) {
             header("Location: " . URLROOT . "/posts");
         }
 
@@ -138,15 +144,14 @@ class Posts extends Controller {
             'bodyError' => ''
         ];
 
-        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-            if($this->postModel->deletePost($id)) {
-                    header("Location: " . URLROOT . "/posts");
+            if ($this->postModel->deletePost($id)) {
+                header("Location: " . URLROOT . "/posts");
             } else {
-               die('Something went wrong!');
+                die('Something went wrong!');
             }
         }
     }
 }
-

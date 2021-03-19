@@ -2,6 +2,7 @@
 //Load the model and the view
 class Controller
 {
+
     public function model($model)
     {
         //Require model file
@@ -18,5 +19,12 @@ class Controller
         } else {
             die("View does not exists.");
         }
+    }
+
+    function data_get($data, $path)
+    {
+        return array_reduce(explode('.', $path), function ($o, $p) {
+            return $o->$p ?? $o[$p] ?? false;
+        }, $data);
     }
 }

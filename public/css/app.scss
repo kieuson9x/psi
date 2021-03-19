@@ -4,11 +4,10 @@
 // Variables
 @import "_layout";
 @import "_variables";
-@import "navbar";
-@import "sidebar";
+@import "_navbar";
+@import "_sidebar";
 
 // Bootstrap
-
 body {
     margin: 0;
     padding: 0;

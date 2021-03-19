@@ -37,3 +37,10 @@ function renderView($viewPath, array $vars)
 
     return $render;
 }
+
+function data_get($data, $path)
+{
+    return array_reduce(explode('.', $path), function ($o, $p) {
+        return $o->$p ?? $o[$p] ?? false;
+    }, $data);
+}

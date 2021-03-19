@@ -1,14 +1,14 @@
 <?php
-require APPROOT . '/views/includes/head.php';
+require APPROOT . '/views/base/head.php';
 ?>
 
 <?php
-require APPROOT . '/views/includes/nav.php';
+require APPROOT . '/views/base/nav.php';
 ?>
 
 <div class="container-fluid page-body-wrapper">
     <?php
-    require APPROOT . '/views/includes/sidebar.php';
+    require APPROOT . '/views/base/sidebar.php';
     ?>
     <div class="main-panel">
         <div class="content-wrapper">
@@ -18,5 +18,5 @@ require APPROOT . '/views/includes/nav.php';
 </div>
 
 <?php
-require APPROOT . '/views/includes/footer.php';
+require APPROOT . '/views/base/footer.php';
 ?>
