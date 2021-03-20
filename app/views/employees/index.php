@@ -17,8 +17,8 @@ require APPROOT . '/views/base/nav.php';
                     <div class="card">
                         <div class="p-4 border-bottom bg-light">
                             <h4 class="card-title mb-0">Nhân viên <?php
-                                                                    $i = array_search($data['chuc_vu'] ?? null, array_column($data['employeeLevelOptions'], 'value'));
-                                                                    $element = ($i !== false ? $data['employeeLevelOptions'][$i] : null);
+                                                                    $i = array_search($data['chuc_vu'] ?? null, array_column($_SESSION['employeeLevelOptions'], 'value'));
+                                                                    $element = ($i !== false ? $_SESSION['employeeLevelOptions'][$i] : null);
                                                                     echo data_get($element, 'title');
                                                                     ?>
                         </div>
@@ -43,8 +43,8 @@ require APPROOT . '/views/base/nav.php';
                                             <th><?php echo $user->user_code ?></th>
                                             <th><?php echo $user->full_name ?></th>
                                             <th><?php
-                                                $i = array_search($user->level_id, array_column($data['employeeLevelOptions'], 'value'));
-                                                $element = ($i !== false ? $data['employeeLevelOptions'][$i] : null);
+                                                $i = array_search($user->level_id, array_column($_SESSION['employeeLevelOptions'], 'value'));
+                                                $element = ($i !== false ? $_SESSION['employeeLevelOptions'][$i] : null);
                                                 echo $element['title'] ?? null;
                                                 ?></th>
 

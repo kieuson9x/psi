@@ -4,6 +4,7 @@ class PostsController extends Controller
     public function __construct()
     {
         $this->postModel = $this->model('Post');
+        $this->initEmployeeLevelOptions();
     }
 
     public function index()

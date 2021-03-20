@@ -4,6 +4,7 @@ class PagesController extends Controller
     public function __construct()
     {
         //$this->userModel = $this->model('User');
+        $this->initEmployeeLevelOptions();
     }
 
     public function index()

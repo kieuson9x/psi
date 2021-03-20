@@ -16,14 +16,14 @@
 
             <?php if (isset($_SESSION['user_name'])) : ?>
                 <li class="nav-item dropdown flex items-center">
-                    <span class="mr-3">Xin chào, <?php echo ($_SESSION['ten_dang_nhap']) ?></span>
+                    <span class="mr-3">Xin chào, <?php echo ($_SESSION['full_name']) ?></span>
 
                     <a class="nav-link dropdown-toggle" href="#" id="avatar-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img src="/public/img/avatar.svg" class="rounded-circle w-8">
                     </a>
                     <div class="dropdown-menu" aria-labelledby="avatar-dropdown">
 
-                        <a class="dropdown-item" href="#t"> <?php echo ($_SESSION['ten_dang_nhap']) ?></a>
+                        <a class="dropdown-item" href="#t">Xin chào, <?php echo ($_SESSION['full_name']) ?></a>
                         <a class="dropdown-item" href="/employees/logout">Đăng xuất</a>
                     </div>
                 </li>

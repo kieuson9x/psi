@@ -9,34 +9,21 @@
                         </a>
                 </li>
 
+                <?php if (isset($_SESSION['user_id'])) : ?>
+                        <?php
+                        $i = array_search($_SESSION['level_id'], array_column($_SESSION['employeeLevelOptions'], 'value'));
+                        $element = ($i !== false ? $_SESSION['employeeLevelOptions'][$i] : null);
+                        $title = data_get($element, 'title');
 
-                <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#employees" aria-expanded="false" aria-controls="employees">
-                                <i class="material-icons" style="font-size: 13px">person</i>
-                                <span class="menu-title">Nhân viên</span>
-                                <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="employees">
-                                <ul class="nav flex-column sub-menu">
-                                        <ul class="nav flex-column sub-menu">
-                                                <li class="nav-item"><a class="nav-link" href="<?php
-                                                                                                $i = array_search("Quản lý khu vực", array_column($data['employeeLevelOptions'], 'title'));
-                                                                                                $element = ($i !== false ? $data['employeeLevelOptions'][$i] : null);
-                                                                                                $id = data_get($element, 'value');
-
-                                                                                                echo URLROOT . '/employees?level_id=' . $id
-                                                                                                ?>" departmentId="1">Nhân viên Quản lý khu vực</a>
-                                                </li>
-                                        </ul>
-                                </ul>
-                        </div>
-                </li>
-
-                <li class="nav-item">
-                        <a class="nav-link" href="<?php echo URLROOT; ?>">
-                                <i class="material-icons" style="font-size: 13px">business_center</i>
-                                Danh sách đại lý
-                        </a>
-                </li>
+                        if ($title == 'Quản lý khu vực' || $title == 'Admin') :
+                        ?>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo URLROOT . "/agencies" ?>">
+                                                <i class="material-icons" style="font-size: 13px">business_center</i>
+                                                Danh sách đại lý
+                                        </a>
+                                </li>
+                        <?php endif; ?>
+                <?php endif; ?>
         </ul>
 </nav>

@@ -1,0 +1,162 @@
+﻿ASM_ERP_Account,mã kr,Branch,Channel,ASM_Name,Agency_Code,Province
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,LUẬN CHUYÊN,Tỉnh Phú Thọ
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,KHANG PHÁT,Tỉnh Phú Thọ
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,MAI CHÍ THỌ,Tỉnh Hà Giang
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,KHANG LUÂN,Tỉnh Yên Bái
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,MINH MƠ,Tỉnh Vĩnh Phúc
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,LONG SƠN,Tỉnh Tuyên Quang
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,TUẤN TÁM,Tỉnh Vĩnh Phúc
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,LÊ LỢI,Tỉnh Vĩnh Phúc
+TRINHDINHKHANH,KR00005,VU1,GT-VLXD,Trịnh Đình Khánh,TRƯỜNG THÀNH,Tỉnh Lào Cai
+PHAMVANCHINH,KR01697,VU1,GT-VLXD,Phạm Văn Chỉnh,HẢI LỘC BN,Tỉnh Bắc Ninh
+PHAMVANCHINH,KR01697,VU1,GT-VLXD,Phạm Văn Chỉnh,HẢI LỘC BG,Tỉnh Bắc Giang
+PHAMVANCHINH,KR01697,VU1,GT-VLXD,Phạm Văn Chỉnh,MỪNG QUÝ,Tỉnh Hưng Yên
+PHAMVANCHINH,KR01697,VU1,GT-VLXD,Phạm Văn Chỉnh,PHẠM THỊ HOA,Tỉnh Nam Định
+PHAMVANCHINH,KR01697,VU1,GT-VLXD,Phạm Văn Chỉnh,"QUANG OANH, HƯNG VÀNG",Thành phố Hà Nội
+PHAMVANCHINH,KR01697,VU1,GT-VLXD,Phạm Văn Chỉnh,ĐẠI PHÁT,Tỉnh Ninh Bình
+PHAMVANCHINH,KR01697,VU1,GT-VLXD,Phạm Văn Chỉnh,PHẠM HOÀI NAM,Tỉnh Hà Nam
+NGUYENTHITHUYVAN,KR01337,VU1,GT-VLXD,Nguyễn Thị Thúy Vân,HỒNG ĐĂNG + NEW,Tỉnh Quảng Ninh
+NGUYENTHITHUYVAN,KR01337,VU1,GT-VLXD,Nguyễn Thị Thúy Vân,TRÍ VIỆT,Tỉnh Hải Dương
+NGUYENTHITHUYVAN,KR01337,VU1,GT-VLXD,Nguyễn Thị Thúy Vân,ĐẶNG THU HUỆ,Thành phố Hà Nội
+NGUYENTHITHUYVAN,KR01337,VU1,GT-VLXD,Nguyễn Thị Thúy Vân,TUẤN LINH,Thành phố Hà Nội
+NINHVIETDONG,,VU1,GT-VLXD,Ninh Viết Đông,NEW,Tỉnh Nghệ An
+NINHVIETDONG,,VU1,GT-VLXD,Ninh Viết Đông,LÊ VIỆT CƯỜNG,Tỉnh Thanh Hóa
+NINHVIETDONG,,VU1,GT-VLXD,Ninh Viết Đông,THANH CẢNH,Tỉnh Hà Tĩnh
+NINHVIETDONG,,VU1,GT-VLXD,Ninh Viết Đông,TỊNH BÙI,Tỉnh Thái Bình
+NINHVIETDONG,,VU1,GT-VLXD,Ninh Viết Đông,vân sơn,Thành phố Hà Nội
+LETHANHVAN,,VU1,GT-NB,Lê Thanh Vân,Minh Hà,Thành phố Hà Nội
+NGUYENHANHCHI_ASM,KR01017,VU1,GT-NB,Nguyễn Hạnh Chi,Vihouse,Thành phố Hà Nội
+NGUYENHANHCHI_ASM,KR01017,VU1,GT-NB,Nguyễn Hạnh Chi,Văn Chiến,Tỉnh Bắc Giang
+NGUYENHANHCHI_ASM,KR01017,VU1,GT-NB,Nguyễn Hạnh Chi,Hải Lộc,Tỉnh Bắc Ninh
+NGUYENVANHUNG03,,VU1,GT-NB,Nguyễn Văn Hùng,Minh Mơ,Tỉnh Vĩnh Phúc
+NGUYENVANHUNG03,,VU1,GT-NB,Nguyễn Văn Hùng,Tân Phát Long Thành,Tỉnh Phú Thọ
+NGUYENTHIHONG,KR00770,VU1,GT-NB,Nguyễn Thị Hồng,Minh Đức,Thành phố Hải Phòng
+NGUYENTHIHONG,KR00770,VU1,GT-NB,Nguyễn Thị Hồng,CPN,Thành phố Hải Phòng
+PHAMQUANGLOI_TBNB,KR00970,VU1,GT-NB,Phạm Quang Lợi,Đại Phát,Tỉnh Ninh Bình
+PHAMQUANGLOI_TBNB,KR00970,VU1,GT-NB,Phạm Quang Lợi,Homeking Vina,Tỉnh Thanh Hóa
+PHAMQUANGLOI_TBNB,KR00970,VU1,GT-NB,Phạm Quang Lợi,New NPP TH,Tỉnh Thanh Hóa
+PHAMQUANGLOI_TBNB,KR00970,VU1,GT-NB,Phạm Quang Lợi,Sato Hoàng Mai,Tỉnh Nam Định
+PHAMQUANGLOI_TBNB,KR00970,VU1,GT-NB,Phạm Quang Lợi,Mạnh Thắng,Tỉnh Thái Bình
+PHAMQUANGLOI_TBNB,KR00970,VU1,GT-NB,Phạm Quang Lợi,Tịnh Bùi,Tỉnh Thái Bình
+LEVANCUONG_ASMHN01,KR00993,VU1,GT-NB,Lê Văn Cường,Hải Anh,Tỉnh Nghệ An
+LEVANCUONG_ASMHN01,KR00993,VU1,GT-NB,Lê Văn Cường,Thành An,Tỉnh Nghệ An
+LEVANCUONG_ASMHN01,KR00993,VU1,GT-NB,Lê Văn Cường,Bảo Long Oanh,Tỉnh Hà Tĩnh
+LEQUANGTAM,KR03969,VU1,GT-NB,Lê Quang Tâm,Hải Đăng,Tỉnh Hải Dương
+LEQUANGTAM,KR03969,VU1,GT-NB,Lê Quang Tâm,Đại Dương,Tỉnh Hưng Yên
+LEQUANGTAM,KR03969,VU1,GT-NB,Lê Quang Tâm,Hồng Đăng(New),Tỉnh Quảng Ninh
+PHANDODUCTAM,KR05557,VU1,GT-NB,Phan Đỗ Đức Tâm,Lam Oanh,Tỉnh Thái Nguyên
+PHANDODUCTAM,KR05557,VU1,GT-NB,Phan Đỗ Đức Tâm,Đồng Lý,Tỉnh Bắc Giang
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,Dự án Minh Hà,Thành phố Hà Nội
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,Hoa Thống Nhất,Thành phố Hà Nội
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,NPP chuyên bếp hút (new),Thành phố Hà Nội
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,NPP- YB,Tỉnh Yên Bái
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,Lào Cai,Tỉnh Lào Cai
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,NPP -HG,Tỉnh Hà Giang
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,NPP New HB,Tỉnh Hòa Bình
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,NPP New TQ,Tỉnh Tuyên Quang
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,NPP new,Tỉnh Cao Bằng
+NGUYENMINHTAM,KR05586,VU1,GT-NB,Nguyễn Minh Tâm,NPP hút-bếp,Tỉnh Hà Nam
+KHUATVANTHUAN,KR03330,VU1,GT-GD,Khuất văn Thuận,Sonvu,Thành phố Hà Nội
+KHUATVANTHUAN,KR03330,VU1,GT-GD,Khuất văn Thuận,Tám Oanh,Tỉnh Hòa Bình
+CAOVANTHUONG,KR02451,VU1,GT-GD,Cao Văn Thương,CK,Tỉnh Nghệ An
+CAOVANTHUONG,KR02451,VU1,GT-GD,Cao Văn Thương,Lý Ngân,Tỉnh Hà Tĩnh
+CAOVANTHUONG,KR02451,VU1,GT-GD,Cao Văn Thương,Hương Giang,Tỉnh Nghệ An
+CAOVANTHUONG,KR02451,VU1,GT-GD,Cao Văn Thương,Hồng Hà,Tỉnh Nghệ An
+DOVANTRUONG,,VU1,GT-GD,Đỗ Văn Trường,Daiphat,Tỉnh Ninh Bình
+DOVANTRUONG,,VU1,GT-GD,Đỗ Văn Trường,Homeking Vina,Tỉnh Thanh Hóa
+DOVANTRUONG,,VU1,GT-GD,Đỗ Văn Trường,Công ty cổ phần Thanh Hoa-Sông Đà,Tỉnh Thanh Hóa
+TRANTRUNGHIEU2,KR04653,VU1,GT-GD,Trần Trung Hiếu,Đại Phát Việt nam,Thành phố Hà Nội
+TRANTRUNGHIEU2,KR04653,VU1,GT-GD,Trần Trung Hiếu,Công ty cổ phần Thiết bị Công Nghệ Máy VN ( Hoặc Kang chính hãng ),Thành phố Hà Nội
+PHAMKHANHTOAN,KR02524,VU1,GT-GD,Phạm Khánh Toàn,Tuantam,Tỉnh Vĩnh Phúc
+PHAMKHANHTOAN,KR02524,VU1,GT-GD,Phạm Khánh Toàn,Công ty TNHH thương mại điện tử VHH,Thành phố Hà Nội
+PHAMKHANHTOAN,KR02524,VU1,GT-GD,Phạm Khánh Toàn,Công ty TNHH Thương mại và Điện tử HT,Thành phố Hà Nội
+NGUYENNGOCSU,KR01726,VU1,GT-GD,Nguyễn Ngọc Sự,Đại Dương Hưng Yên,Tỉnh Hưng Yên
+NGUYENNGOCSU,KR01726,VU1,GT-GD,Nguyễn Ngọc Sự,ETC,Tỉnh Hải Dương
+NGUYENNGOCSU,KR01726,VU1,GT-GD,Nguyễn Ngọc Sự,Hồng Đăng,Tỉnh Quảng Ninh
+NGUYENNGOCSU,KR01726,VU1,GT-GD,Nguyễn Ngọc Sự,Đông Lý,Tỉnh Quảng Ninh
+DAOTRONGKHAI,KR01440,VU1,GT-GD,Đào Trọng Khải,Long Oanh,Tỉnh Phú Thọ
+VUNHANPHUNG,,VU1,GT-GD,Vũ Nhân Phụng,CPN,Thành phố Hải Phòng
+VUNHANPHUNG,,VU1,GT-GD,Vũ Nhân Phụng,Công ty TNHH Xuất Nhập Khẩu và Phân Phối HK,Thành phố Hải Phòng
+BACHVANDUNG,KR00073,VU1,GT-GD,Bạch Văn Dũng,Duy anh,Tỉnh Nam Định
+BACHVANDUNG,KR00073,VU1,GT-GD,Bạch Văn Dũng,Namtruong,Tỉnh Thái Bình
+BACHVANDUNG,KR00073,VU1,GT-GD,Bạch Văn Dũng,Quangtrang,Tỉnh Thái Bình
+BACHVANDUNG,KR00073,VU1,GT-GD,Bạch Văn Dũng,Ninhthuy,Tỉnh Hà Nam
+NGUYENVANHAI,KR00724,VU1,GT-GD,Nguyễn Văn Hải,Hailoc,Tỉnh Bắc Ninh
+NGUYENVANHAI,KR00724,VU1,GT-GD,Nguyễn Văn Hải,Nhật Minh Tuấn,Tỉnh Bắc Giang
+VUTHANHHUE,KR00806,VU1,GT-GD,Vũ Thành Huế,Trực tuyến,Thành phố Hà Nội
+VUTHANHHUE,KR00806,VU1,GT-GD,Vũ Thành Huế,Công ty TNHH Phát triển thương mại Hưng Hải,Thành phố Hà Nội
+VUTHANHHUE,KR00806,VU1,GT-GD,Vũ Thành Huế,Lê Tố Loan,Thành phố Hà Nội
+VUTHANHHUE,KR00806,VU1,GT-GD,Vũ Thành Huế,Công ty thương mại Thảo Anh,Thành phố Hà Nội
+VUTHANHHUE,KR00806,VU1,GT-GD,Vũ Thành Huế,Công ty TNHH một thành viên thương mại Đức Thành,Thành phố Hà Nội
+DOTHANHMINH,KR00781,VU1,GT-GD,Đỗ Thanh Minh,Công ty trách nhiệm hữu hạn TCM Gia Hưng,Tỉnh Thái Nguyên
+NGUYENTRUNGKIEN_ASMHN,KR02525,VU1,GT-GD,Nguyễn Trung Kiên,KiemHoan,Tỉnh Sơn La
+NGUYENTRUNGKIEN_ASMHN,KR02525,VU1,GT-GD,Nguyễn Trung Kiên,Công ty TNHH TM và xây dựng Bình Nguyên,Tỉnh Lào Cai
+NGUYENTRUNGKIEN_ASMHN,KR02525,VU1,GT-GD,Nguyễn Trung Kiên,Công ty TNHH Thương mại Tân Hưng,Tỉnh Lào Cai
+NGUYENTRUNGKIEN_ASMHN,KR02525,VU1,GT-GD,Nguyễn Trung Kiên,Hoàng Văn Lâm,Tỉnh Yên Bái
+NGUYENTRUNGKIEN_ASMHN,KR02525,VU1,GT-GD,Nguyễn Trung Kiên,Công ty TNHH Thương mại và Dịch vụ Bình Minh Việt,Tỉnh Phú Thọ
+TRINHDINHKHANH,KR00005,VU1,GT-GD,Trịnh Đình Khánh,Truongthanh,Tỉnh Lào Cai
+TRANTHUHUONG,KR01427,HCM,MT,Quách Bích Hà,BIGC,Thành phố Hồ Chí Minh
+TRANTHUHUONG,KR01427,DAN,MT,Nguyễn Hoài Nhi,BIGC,Thành phố Đà Nẵng
+TRANTHUHUONG,KR01427,VU1,MT,Trần Thị Thu Hương,BIGC,Thành phố Hà Nội
+LEVANNHAN,KR05802,VU1,MT,Lê Văn Nhàn,Nguyenkim,Thành phố Hà Nội
+LEVANNHAN,KR05802,VU1,MT,Lê Văn Nhàn,Pico,Thành phố Hà Nội
+TRANTHIDAMKHANH,KR01494,VU1,MT,Trần Thị Đàm Khánh,Coop,Thành phố Hà Nội
+TRANTHIDAMKHANH,KR01494,VU1,MT,Trần Thị Đàm Khánh,Lanchi,Thành phố Hà Nội
+TRANTHIDAMKHANH,KR01494,VU1,MT,Trần Thị Đàm Khánh,Metro,Thành phố Hà Nội
+TRANTHIDAMKHANH,KR01494,VU1,MT,Trần Thị Đàm Khánh,Miennui,Thành phố Hà Nội
+TRANTHIDAMKHANH,KR01494,VU1,MT,Trần Thị Đàm Khánh,Vinmart,Thành phố Hà Nội
+TRANTHIDAMKHANH,KR01494,VU1,MT,Trần Thị Đàm Khánh,BRG,Thành phố Hà Nội
+TRANTHIDAMKHANH,KR01494,VU1,MT,Trần Thị Đàm Khánh,ECO,Thành phố Hà Nội
+VUTHITHUY,,VU1,MT-DL,Vũ Thị Thủy,MM,Thành phố Hà Nội
+VUTHITHUY,,VU1,MT-DL,Vũ Thị Thủy,VHC,Thành phố Hà Nội
+VUTHITHUY,,VU1,MT-DL,Vũ Thị Thủy,Nguyenkim,Thành phố Hà Nội
+PHAMVANTU,,VU1,MT-DL,Phạm Văn Tú,Pico,Thành phố Hà Nội
+PHAMVANTU,,VU1,MT-DL,Phạm Văn Tú,TGDD,Thành phố Hà Nội
+LETRUNGLOI,KR00006,VU1,KeyAcc,Lê Trung Lợi,MM,Thành phố Hà Nội
+PHUONGDINHNAM,KR00611,VU1,KeyAcc,Phương Đình Nam,Thongnhat,Thành phố Hà Nội
+PHUONGDINHNAM,KR00611,VU1,KeyAcc,Phương Đình Nam,Thongnhat,Thành phố Hồ Chí Minh
+VUONGTHUTHUY,KR01495,VU1,KeyAcc,Vương Thị Thu Thủy,VHC,Thành phố Hà Nội
+VUONGTHUTHUY,KR01495,VU1,MT,Vương Thị Thu Thủy,Vanchien,Thành phố Hà Nội
+NGUYENHONGTHUTHAO,KR10033,VU1,KeyAcc,Lê Văn Nhàn,Nguyenkim,Thành phố Hà Nội
+NGUYENHONGTHUTHAO,KR10033,HCM,KeyAcc,Nguyễn Hồng Thu Thảo,Nguyenkim,Thành phố Hồ Chí Minh
+NGUYENHONGTHUTHAO,KR10033,DAN,KeyAcc,Đoàn Ngọc Mậu,Nguyenkim,Thành phố Đà Nẵng
+NGUYENHONGTHUTHAO,KR10033,DAN,KeyAcc,Đoàn Ngọc Mậu,Nguyenkim,Tỉnh Đắk Lắk
+NGUYENHONGTHUTHAO,KR10033,DAN,KeyAcc,Đoàn Ngọc Mậu,Nguyenkim,Tỉnh Gia Lai
+NGUYENHONGTHUTHAO,KR10033,DAN,KeyAcc,Đoàn Ngọc Mậu,Nguyenkim,Tỉnh Khánh Hòa
+NGUYENHONGTHUTHAO,KR10033,DAN,KeyAcc,Đoàn Ngọc Mậu,Nguyenkim,Tỉnh Bình Định
+NGUYENHONGTHUTHAO,KR10033,HCM,KeyAcc,Nguyễn Hồng Thu Thảo,Nguyenkim,Tỉnh An Giang
+NGUYENHONGTHUTHAO,KR10033,HCM,KeyAcc,Nguyễn Hồng Thu Thảo,Nguyenkim,Tỉnh Bình Dương
+NGUYENHONGTHUTHAO,KR10033,HCM,KeyAcc,Nguyễn Hồng Thu Thảo,Nguyenkim,Thành phố Cần Thơ
+NGUYENHONGTHUTHAO,KR10033,DAN,KeyAcc,Đoàn Ngọc Mậu,Nguyenkim,Tỉnh Thừa Thiên - Huế
+NGUYENHONGTHUTHAO,KR10033,VU1,MT-DL,Nguyễn Hồng Thu Thảo,Nguyenkim,Thành phố Hà Nội
+NGUYENHONGTHUTHAO,KR10033,DAN,KeyAcc,Đoàn Ngọc Mậu,Nguyenkim,Tỉnh Lâm Đồng
+NGUYENHONGTHUTHAO,KR10033,DAN,KeyAcc,Đoàn Ngọc Mậu,Nguyenkim,Tỉnh Quảng Ngãi
+LEHONGPHONG,KR10006,DAN,KeyAcc,Đoàn Ngọc Mậu,TGDD,Thành phố Đà Nẵng
+LEHONGPHONG,KR10006,VU1,KeyAcc,Lê Hồng Phong,TGDD,Thành phố Hà Nội
+LEHONGPHONG,KR10006,HCM,KeyAcc,Lê Hồng Phong,TGDD,Thành phố Hồ Chí Minh
+LEHONGPHONG,KR10006,VU1,KeyAcc,Lê Hồng Phong,TGDD,Thành phố Hồ Chí Minh
+TRANTHANHTHUA,KR11182,HCM,KeyAcc,Trần Thanh Thừa,Caophong,Thành phố Hồ Chí Minh
+NGUYENHOAINHI,KR20020,DAN,KeyAcc,Nguyễn Hoài Nhi,Caophong,Thành phố Đà Nẵng
+VUNHATHUNG,KR00762,HCM,Online,Vũ Nhật Hưng,Trực tuyến,Thành phố Hồ Chí Minh
+VUNHATHUNG,KR00762,HCM,Online,Vũ Nhật Hưng,SR,Thành phố Hồ Chí Minh
+VUNHATHUNG,KR00762,HCM,Online,Vũ Nhật Hưng,Tiki,Thành phố Hồ Chí Minh
+VUNHATHUNG,KR00762,VU1,Online,Vũ Nhật Hưng,Meta,Thành phố Hà Nội
+VUNHATHUNG,KR00762,VU1,Online,Vũ Nhật Hưng,Other,Thành phố Hà Nội
+VUNHATHUNG,KR00762,HCM,Online,Vũ Nhật Hưng,LAZADA,Thành phố Hồ Chí Minh
+VUNHATHUNG,KR00762,VU1,Online,Vũ Nhật Hưng,Nhân viên,Thành phố Hà Nội
+VUNHATHUNG,KR00762,HCM,Online,Vũ Nhật Hưng,Nhân viên,Thành phố Hồ Chí Minh
+VUNHATHUNG,KR00762,HCM,Online,Vũ Nhật Hưng,Other,Thành phố Hồ Chí Minh
+VUNHATHUNG,KR00762,HCM,Online,Vũ Nhật Hưng,Online,Thành phố Hồ Chí Minh
+VUNHATHUNG,KR00762,HCM,Online,Vũ Nhật Hưng,Meta,Thành phố Hồ Chí Minh
+VUNHATHUNG,KR00762,VU1,Online,Vũ Nhật Hưng,S-Trading,Thành phố Hà Nội
+DOANNGOCMAU,KR20016,DAN,KeyAcc,Đoàn Ngọc Mậu,TGDD,Thành phố Đà Nẵng
+LUUQUYDON,KR20357,DAN,KeyAcc,Lưu Quý Đôn,MM,Thành phố Hà Nội
+LUUQUYDON,KR20357,DAN,KeyAcc,Lưu Quý Đôn,Nguyenkim,Thành phố Đà Nẵng
+LUUQUYDON,KR20357,DAN,KeyAcc,Lưu Quý Đôn,Nguyenkim,Tỉnh Đắk Lắk
+LUUQUYDON,KR20357,DAN,KeyAcc,Lưu Quý Đôn,Nguyenkim,Tỉnh Gia Lai
+LUUQUYDON,KR20357,DAN,KeyAcc,Lưu Quý Đôn,Nguyenkim,Tỉnh Khánh Hòa
+LUUQUYDON,KR20357,DAN,KeyAcc,Lưu Quý Đôn,Nguyenkim,Tỉnh Bình Định
+NGUYENHOAINHI,KR20020,DAN,MT,Nguyễn Hoài Nhi,BIGC,Thành phố Đà Nẵng
+Chung,,MYA,NN.MYAN,Chung,Khác,Chung
+Chung,,IND,NN.IND,Chung,Khác,Chung
+Chung,,VU1,GT-NB,Chung,Khác,Thành phố Hà Nội

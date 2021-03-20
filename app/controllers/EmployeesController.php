@@ -4,12 +4,12 @@ class EmployeesController extends Controller
     public function __construct()
     {
         $this->userModel = $this->model('Employee');
+        $this->initEmployeeLevelOptions();
     }
 
     public function index($params = [])
     {
         $employeeLevel = $this->data_get($params, 'level_id');
-        $employeeLevelOptions = $this->model('EmployeeLevel')->getLevelOptions();
 
         if (!$employeeLevel) {
             $users = [];
@@ -20,7 +20,6 @@ class EmployeesController extends Controller
         $data = [
             'users' => $users,
             'employeeLevel' => $employeeLevel,
-            'employeeLevelOptions' => $employeeLevelOptions
         ];
 
         $this->view('employees/index', $data);
@@ -182,6 +181,8 @@ class EmployeesController extends Controller
         unset($_SESSION['user_name']);
         unset($_SESSION['full_name']);
         unset($_SESSION['level_id']);
+        unset($_SESSION['employeeLevelOptions']);
+        var_dump($_SESSION);
         header('location:' . URLROOT . '/employees/login');
     }
 }

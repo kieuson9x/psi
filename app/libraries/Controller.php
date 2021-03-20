@@ -2,6 +2,18 @@
 //Load the model and the view
 class Controller
 {
+    public function initEmployeeLevelOptions()
+    {
+        if ($_SESSION['user_id'] && !isset($_SESSION['employeeLevelOptions'])) {
+            require_once 'app/models/EmployeeLevel.php';
+
+            $employeeLevel = new EmployeeLevel();
+
+            $employeeLevelOptions = $employeeLevel->getLevelOptions();
+
+            $_SESSION['employeeLevelOptions'] = $employeeLevelOptions;
+        }
+    }
 
     public function model($model)
     {
