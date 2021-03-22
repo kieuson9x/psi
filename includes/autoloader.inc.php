@@ -38,9 +38,12 @@ function renderView($viewPath, array $vars)
     return $render;
 }
 
-function data_get($data, $path)
-{
-    return array_reduce(explode('.', $path), function ($o, $p) {
-        return $o->$p ?? $o[$p] ?? false;
-    }, $data);
-}
+// function data_get($data, $path, $default = null)
+// {
+//     return array_reduce(explode('.', $path), function ($o, $p) use ($default) {
+//         if (isset($o->$p)) return (is_object($o->$p) ? (array) $o->$p : $o->$p) ?? $default;
+//         if (isset($o[$p])) return (is_object($o[$p]) ? (array) $o[$p] : $o[$p])  ?? $default;
+
+//         return $default;
+//     }, $data);
+// }

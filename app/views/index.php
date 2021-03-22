@@ -18,5 +18,8 @@ require APPROOT . '/views/base/nav.php';
 </div>
 
 <?php
+require APPROOT . '/views/base/script.php';
+?>
+<?php
 require APPROOT . '/views/base/footer.php';
 ?>

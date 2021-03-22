@@ -15,6 +15,41 @@ class Controller
         }
     }
 
+    public function initBusinessUnitOptions()
+    {
+        if ($_SESSION['user_id'] && !isset($_SESSION['businessUnitOptions'])) {
+            require_once 'app/models/BusinessUnit.php';
+            $instance = new BusinessUnit();
+            $options = $instance->getLevelOptions();
+
+            $_SESSION['businessUnitOptions'] = $options;
+        }
+    }
+
+    public function initIndustryOptions()
+    {
+        if ($_SESSION['user_id'] && !isset($_SESSION['industryOptions'])) {
+            require_once 'app/models/Industry.php';
+
+            $instance = new Industry();
+            $options = $instance->getLevelOptions();
+
+            $_SESSION['industryOptions'] = $options;
+        }
+    }
+
+    public function initProductTypeOptions()
+    {
+        if ($_SESSION['user_id'] && !isset($_SESSION['productTypeOptions'])) {
+            require_once 'app/models/ProductType.php';
+
+            $instance = new ProductType();
+            $options = $instance->getLevelOptions();
+
+            $_SESSION['productTypeOptions'] = $options;
+        }
+    }
+
     public function model($model)
     {
         //Require model file

@@ -1,5 +1,5 @@
 <?php
-class BusinessUnit
+class ProductType
 {
     private $db;
     public function __construct()
@@ -9,7 +9,7 @@ class BusinessUnit
 
     public function getLevelOptions()
     {
-        $this->db->query('SELECT id, name FROM business_units');
+        $this->db->query('SELECT id, name FROM product_types');
 
         $results = $this->db->resultSet();
 

@@ -182,7 +182,9 @@ class EmployeesController extends Controller
         unset($_SESSION['full_name']);
         unset($_SESSION['level_id']);
         unset($_SESSION['employeeLevelOptions']);
-        var_dump($_SESSION);
+        unset($_SESSION['businessUnitOptions']);
+        unset($_SESSION['industryOptions']);
+        unset($_SESSION['productTypeOptions']);
         header('location:' . URLROOT . '/employees/login');
     }
 }

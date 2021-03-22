@@ -436,7 +436,7 @@ table tr td.normal-green {
   background: #5aa469;
 }
 
-table tr td:not(:first-child).not-editable {
+table tr td:first-child.not-editable {
   background: #bbbbbb;
 }
 /*# sourceMappingURL=app.css.map */
