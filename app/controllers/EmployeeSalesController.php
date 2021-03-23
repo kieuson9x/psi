@@ -1,16 +1,18 @@
 <?php
-class InventoriesController extends Controller
+class EmployeeSalesController extends Controller
 {
     private $db;
     public function __construct()
     {
-        $this->inventoryModel = $this->model('Inventory');
         $this->employeeSaleModel = $this->model('EmployeeSale');
+        $this->agencyModel = $this->model('Agency');
+        $this->inventoryModel = $this->model('Inventory');
 
         $this->initEmployeeLevelOptions();
         $this->initBusinessUnitOptions();
         $this->initIndustryOptions();
         $this->initProductTypeOptions();
+        $this->initAgencyOptionsByASM();
     }
 
     public function index()
@@ -19,16 +21,18 @@ class InventoriesController extends Controller
         $year = (int) ($_GET['year'] ?? date('Y'));
         $data['year'] = $year;
 
-        if ($_SESSION['user_id']) {
+        $employeeId = $_SESSION['user_id'] ?? null;
+
+        if ($employeeId) {
             $year = $data['year'] ?? date('Y');
+            $agencies = array_column($this->agencyModel->getAgenciesByAMS($employeeId), 'id');
 
-            $inventories = $this->inventoryModel->getInventories($year);
+            $agencySales = $this->employeeSaleModel->getAgencySales($agencies, $year);
 
-            $data['inventories'] = $inventories;
+            $data['agency_sales'] = $agencySales;
         }
 
-
-        $this->view('inventories/index', $data);
+        $this->view('employees/sales', $data);
     }
 
     public function update()
@@ -36,36 +40,36 @@ class InventoriesController extends Controller
 
         $data = [];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {
             $data = [
                 'month' => (int) $this->data_get($_POST, 'name'),
                 'value' => (int) trim($this->data_get($_POST, 'value')),
                 'product_id' => (int) trim($this->data_get($_POST, 'pk')),
                 'year' => (int) trim($this->data_get($_POST, 'year')),
                 'state' => trim($this->data_get($_POST, 'state')),
+                'agency_id' => $this->data_get($_POST, 'agency_id')
             ];
 
-            if ($data['state'] === 'purchase') {
-                $data['number_of_imported_goods'] = $data['value'];
+            if ($data['state'] === 'sale') {
+                $data['number_of_sale_goods'] = $data['value'];
             }
 
             // if ($data['state'] === 'inventory') {
             //     $data['number_of_remaining_goods'] = $data['value'];
             // }
 
-            $inventory = $this->inventoryModel->findInventory($data['product_id'], $data['month'], $data['year']);
+            $agencySale = $this->employeeSaleModel->findAgencySale($data['agency_id'], $data['product_id'], $data['month'], $data['year']);
 
-            if ($inventory) {
-                $updateStatus = $this->inventoryModel->updateInventory($inventory->id, $data);
+            if ($agencySale) {
+                $updateStatus = $this->employeeSaleModel->updateAgencySale($agencySale->id, $data);
             } else {
-                $createStatus = $this->inventoryModel->createInventory($data);
+                $createStatus = $this->employeeSaleModel->createAgencySale($data['agency_id'], $data);
             }
 
             $this->syncYear($data);
-
             echo json_encode(['success' => true]);
 
-            // if ($this->inventoryModel->updateOrCreateInventory($data)) {
+            // if ($this->employeeSaleModel->updateOrcreateEmployeeSale($data)) {
             //     echo json_encode(['success' => true]);
             // } else {
             //     die("Something went wrong, please try again!");
@@ -77,24 +81,27 @@ class InventoriesController extends Controller
     {
         $data = [];
 
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_SESSION['user_id'])) {
             $data = [
                 'months' => $this->data_get($_POST, 'months'),
                 'product_id' => (int) $this->data_get($_POST, 'product_id'),
                 'year' => (int) $this->data_get($_POST, 'year'),
-                'number_of_imported_goods' => $this->data_get($_POST, 'number_of_imported_goods'),
+                'number_of_sale_goods' => $this->data_get($_POST, 'number_of_sale_goods'),
+                'agency_id' =>  $this->data_get($_POST, 'agency_id')
                 // 'number_of_remaining_goods' => $this->data_get($_POST, 'number_of_remaining_goods'),
             ];
+
             $updateStatus = true;
             $createStatus = true;
             foreach ($data['months'] as $month) {
-                $inventory = $this->inventoryModel->findInventory($data['product_id'], $month, $data['year']);
+                $agencySale = $this->employeeSaleModel->findAgencySale($data['agency_id'], $data['product_id'], $month, $data['year']);
+
                 $data['month'] = $month;
 
-                if ($inventory) {
-                    $updateStatus = $this->inventoryModel->updateInventory($inventory->id, $data);
+                if ($agencySale) {
+                    $updateStatus = $this->employeeSaleModel->updateAgencySale($agencySale->id, $data);
                 } else {
-                    $createStatus = $this->inventoryModel->createInventory($data);
+                    $createStatus = $this->employeeSaleModel->createAgencySale($data['agency_id'], $data);
                 }
             }
 
@@ -105,7 +112,7 @@ class InventoriesController extends Controller
             } else {
                 echo json_encode(['success' => false]);
             }
-            // if ($this->inventoryModel->updateOrCreateInventory($data)) {
+            // if ($this->employeeSaleModel->updateOrcreateEmployeeSale($data)) {
             //     echo json_encode(['success' => true]);
             // } else {
             //     die("Something went wrong, please try again!");

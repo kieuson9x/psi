@@ -10,27 +10,6 @@ class Inventory
     public function getInventories($year)
     {
         $db = $this->db;
-        // $today = date('10-m-Y');
-        // $year = date('Y', strtotime($today));
-
-        // $endMonth = date('m', strtotime('+3 months', strtotime($today)));
-        // $endYear = date('Y', strtotime('+3 months', strtotime($today)));
-
-        // $startMonth = date('m', strtotime($today));
-        // $startYear = date('Y', strtotime($today));
-
-        // $this->db->query("SELECT * FROM inventories WHERE DATE(CONCAT(`year`, '-', `month`, '-01')) BETWEEN '{$startYear}-{$startMonth}-01' AND '{$endYear}-{$endMonth}-15'");
-        // $this->db->query("SELECT t1.id inventory_id, t1.product_id, t1.month, t1.year, t1.number_of_imported_goods, t1.number_of_remaining_goods, p.*
-        //                     FROM inventories as t1
-        //                     INNER JOIN
-        //                     (SELECT product_id, MAX(year) max_year
-        //                     FROM inventories
-        //                     WHERE DATE(CONCAT(`year`, '-', `month`, '-01')) BETWEEN '{$year}-01-01' AND '{$year}-12-31'
-        //                     GROUP BY product_id ) as t2
-        //                     ON t1.product_id = t2.product_id and t1.year = t2.max_year
-        //                     JOIN products as p
-        //                     ON p.id = t1.product_id
-        //                     ");
 
         $db->query("SELECT DISTINCT t1.product_id
                             FROM inventories as t1
@@ -41,7 +20,7 @@ class Inventory
 
         $newResults = array_map(function ($item) use ($db, $year) {
             $db->query("SELECT p.product_code, p. name, p.model, p.business_unit_id, p.industry_id, p.product_type_id,
-                                 t1.product_id, t1.month, t1.year, t1.number_of_imported_goods, t1.number_of_remaining_goods
+                                 t1.product_id, t1.month, t1.year, t1.number_of_imported_goods, t1.number_of_remaining_goods, t1.number_of_sale_goods
                             FROM inventories as t1
                             JOIN products as p
                             ON p.id = t1.product_id
@@ -91,6 +70,27 @@ class Inventory
         $db->bind(':year', data_get($data, 'year'));
         $db->bind(':number_of_imported_goods', data_get($data, 'number_of_imported_goods'));
         // $db->bind(':number_of_remaining_goods', data_get($data, 'number_of_remaining_goods'));
+
+        return $db->execute();
+    }
+
+    public function syncRemainingGoods($productId, $month, $year, $numberOfSales, $numberOfPurchases, $numberOfPreviousInventory)
+    {
+        $db = $this->db;
+
+        $query = "UPDATE inventories
+                        SET `number_of_remaining_goods` = :number_of_remaining_goods, `number_of_sale_goods` = :number_of_sale_goods
+                        WHERE product_id = :product_id and month = :month and year = :year";
+
+        $numberOfInventory = $numberOfPreviousInventory + $numberOfPurchases - $numberOfSales;
+
+        $db->query($query);
+
+        $db->bind(':number_of_sale_goods', $numberOfSales);
+        $db->bind(':number_of_remaining_goods', $numberOfInventory);
+        $db->bind(':product_id', $productId);
+        $db->bind(':month', $month);
+        $db->bind(':year', $year);
 
         return $db->execute();
     }

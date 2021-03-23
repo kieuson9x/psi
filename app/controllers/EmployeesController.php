@@ -185,6 +185,7 @@ class EmployeesController extends Controller
         unset($_SESSION['businessUnitOptions']);
         unset($_SESSION['industryOptions']);
         unset($_SESSION['productTypeOptions']);
+        unset($_SESSION['agencyOptions']);
         header('location:' . URLROOT . '/employees/login');
     }
 }

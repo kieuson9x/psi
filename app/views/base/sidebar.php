@@ -52,7 +52,7 @@
                         if ($title == 'Quản lý khu vực' || $title == 'Admin') :
                         ?>
                                 <li class="nav-item">
-                                        <a class="nav-link" href="<?php echo URLROOT . "/inventories" ?>">
+                                        <a class="nav-link" href="<?php echo URLROOT . "/employee-sales" ?>">
                                                 <i class="material-icons" style="font-size: 13px">inventory_2</i>
                                                 Bảng nhập nhập số sales
                                         </a>

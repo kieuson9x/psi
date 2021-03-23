@@ -46,7 +46,6 @@ class Core
 
     // Get params
     $this->params = !empty($params) ? ['params' => $params] : [];
-
     // Call a callback with array of params
     call_user_func_array([$this->currentController, $this->currentMethod], $this->params);
   }

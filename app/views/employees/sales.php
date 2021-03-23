@@ -16,10 +16,10 @@ require APPROOT . '/views/base/nav.php';
                 <div class="col-md-12 grid-margin">
                     <div class="card">
                         <div class="p-4 border-bottom bg-light">
-                            <h4 class="card-title mb-0">Bảng nhập tồn kho</h4>
+                            <h4 class="card-title mb-0">Bảng nhập sale theo sản phẩm</h4>
                         </div>
                         <div class="card-body">
-                            <form id="year-selection" method="GET" action="<?php echo URLROOT; ?>/inventories/index">
+                            <form id="year-selection" method="GET" action="<?php echo URLROOT; ?>/employee-sales/index">
                                 <div class="form-group row">
                                     <label for="year" class="col-xs-2 col-form-label mr-2">Năm</label>
                                     <div class="col-xs-4 mr-2">
@@ -35,90 +35,69 @@ require APPROOT . '/views/base/nav.php';
                                     </button>
 
                                     <div class="col-xs-4">
-                                        <a href="#addProductPlanModal" class="btn btn-success flex items-center justify-center" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm/Cập nhật số nhập
+                                        <a href="#addSaleModal" class="btn btn-success flex items-center justify-center" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Thêm/Cập nhật số sale
                                                 mới</span></a>
                                     </div>
                                 </div>
 
                             </form>
 
-                            <table class="table table-striped" id="table_inventories">
+                            <table class="table table-striped" id="table_agency_sales">
                                 <thead>
                                     <tr>
-                                        <td rowspan="2">ID</td>
-                                        <!-- <td rowspan="2">Mã vật tư</td> -->
-                                        <td rowspan="2">Tên vật tư</td>
-                                        <!-- <td rowspan="2">Model</td> -->
-                                        <!-- <td rowspan="2">Đơn vị kinh doanh</td> -->
-                                        <!-- <td rowspan="2">Ngành hàng</td> -->
-                                        <!-- <td rowspan="2">Nhóm hàng</td> -->
+                                        <td>ID</td>
+                                        <!-- <td>Mã vật tư</td> -->
+                                        <td>Tên vật tư</td>
+                                        <!-- <td>Model</td> -->
+                                        <!-- <td>Đơn vị kinh doanh</td> -->
+                                        <!-- <td>Ngành hàng</td> -->
+                                        <!-- <td>Nhóm hàng</td> -->
+                                        <td>Đại lý</td>
                                         <?php for ($i = 1; $i <= 12; $i++) : ?>
-                                            <th data-editable="true" colspan="3"><?php echo "Tháng {$i}"; ?></th>
-
-                                        <?php endfor ?>
-                                    </tr>
-
-                                    <tr>
-                                        <?php for ($i = 1; $i <= 12; $i++) : ?>
-                                            <th data-editable="true">P</th>
-                                            <th>S</th>
-                                            <th data-editable="true">I</th>
+                                            <th data-editable="true"><?php echo "Tháng {$i}"; ?></th>
                                         <?php endfor ?>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($data['inventories'] as $inventory) : ?>
+                                    <?php foreach ($data['agency_sales'] as $sale) : ?>
                                         <tr>
-                                            <td class="not-editable"><?php echo data_get($inventory, '0.product_id') ?></th>
-                                                <!-- <td class="not-editable"><?php echo data_get($inventory, '0.product_code') ?></th> -->
-                                            <td class="not-editable"><?php echo data_get($inventory, '0.name') ?></th>
-                                                <!-- <td class="not-editable"><?php echo data_get($inventory, '0.model') ?></th> -->
+                                            <td class="not-editable"><?php echo data_get($sale, '0.product_id') ?></th>
+                                                <!-- <td class="not-editable"><?php echo data_get($sale, '0.product_code') ?></th> -->
+                                            <td class="not-editable"><?php echo data_get($sale, '0.name') ?></th>
+                                                <!-- <td class="not-editable"><?php echo data_get($sale, '0.model') ?></th> -->
                                                 <!-- <td class="not-editable"><?php
-                                                                                $value = data_get($inventory, '0.business_unit_id');
+                                                                                $value = data_get($sale, '0.business_unit_id');
                                                                                 $key = array_search($value, array_column($_SESSION['businessUnitOptions'], 'value'));
                                                                                 echo data_get($_SESSION, "businessUnitOptions.{$key}.title");
                                                                                 ?></th>
                                             <td class="not-editable"><?php
-                                                                        $value = data_get($inventory, '0.industry_id');
+                                                                        $value = data_get($sale, '0.industry_id');
                                                                         $key = array_search($value, array_column($_SESSION['industryOptions'], 'value'));
                                                                         echo data_get($_SESSION, "industryOptions.{$key}.title");
                                                                         ?></th>
                                             <td class="not-editable"><?php
-                                                                        $value = data_get($inventory, '0.product_type_id');
+                                                                        $value = data_get($sale, '0.product_type_id');
                                                                         $key = array_search($value, array_column($_SESSION['productTypeOptions'], 'value'));
                                                                         echo data_get($_SESSION, "productTypeOptions.{$key}.title");
                                                                         ?></th> -->
+                                            <td class="not-editable"><?php
+                                                                        $value = data_get($sale, '0.agency_id');
+                                                                        $key = array_search($value, array_column($_SESSION['agencyOptions'], 'value'));
+                                                                        echo data_get($_SESSION, "agencyOptions.{$key}.title");
+                                                                        ?></th>
                                                 <?php for ($i = 0; $i < 12; $i++) : ?>
-                                            <td data-type="text" data-state="purchase" data-name="<?php echo $i + 1 ?>" data-pk="<?php echo data_get($inventory, '0.product_id') ?>"><?php
-                                                                                                                                                                                        $key = array_search($i + 1, array_column($inventory, 'month'));
-                                                                                                                                                                                        if ($key !== false) {
-                                                                                                                                                                                            echo data_get($inventory, "{$key}.number_of_imported_goods", 0);
-                                                                                                                                                                                        } else {
-                                                                                                                                                                                            echo 0;
-                                                                                                                                                                                        }
-                                                                                                                                                                                        ?>
-                                                </th>
-                                            <td class="not-editable" data-state="sale"><?php
-                                                                                        $key = array_search($i + 1, array_column($inventory, 'month'));
-                                                                                        if ($key !== false) {
-                                                                                            echo data_get($inventory, "{$key}.number_of_sale_goods", 0);
-                                                                                        } else {
-                                                                                            echo 0;
-                                                                                        }
-                                                                                        ?>
-                                                </th>
-                                            <td data-type="text" data-state="inventory" data-name="<?php echo $i + 1 ?>" data-pk="<?php echo data_get($inventory, '0.product_id') ?>"><?php
-                                                                                                                                                                                        $key = array_search($i + 1, array_column($inventory, 'month'));
-                                                                                                                                                                                        if ($key !== false) {
-                                                                                                                                                                                            echo data_get($inventory, "{$key}.number_of_remaining_goods", 0);
-                                                                                                                                                                                        } else {
-                                                                                                                                                                                            echo 0;
-                                                                                                                                                                                        }
-                                                                                                                                                                                        ?>
+                                            <td data-state="sale" data-agency-id="<?php echo data_get($sale, '0.agency_id') ?>" data-name="<?php echo $i + 1 ?>" data-pk="<?php echo data_get($sale, '0.product_id') ?>"><?php
+                                                                                                                                                                                                                            $key = array_search($i + 1, array_column($sale, 'month'));
+                                                                                                                                                                                                                            if ($key !== false) {
+                                                                                                                                                                                                                                echo data_get($sale, "{$key}.number_of_sale_goods", 0);
+                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                echo 0;
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            ?>
                                                 </th>
                                             <?php endfor ?>
                                         </tr>
-                                    <?php endforeach; ?>
+                                    <?php endforeach ?>
                                 </tbody>
                             </table>
                         </div>
@@ -128,18 +107,26 @@ require APPROOT . '/views/base/nav.php';
         </div>
     </div>
 
-    <div id="addProductPlanModal" class="modal fade">
+    <div id="addSaleModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form name="add_inventory" method="POST" action="<?php echo URLROOT; ?>/inventories/create" class="form-horizontal">
+                <form name="add_agency_sales" method="POST" action="<?php echo URLROOT; ?>/employee-sales/create" class="form-horizontal">
                     <div class="modal-header">
-                        <h4 class="modal-title">Thêm/cập nhật số lượng nhập</h4>
+                        <h4 class="modal-title">Thêm/cập nhật mới số sales</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group row">
                             <label>Sản phẩm</label>
                             <select id="product-selection" class="form-control" required name="product_id" data-live-search="true" style="width: 100%"></select>
+                            <div class="invalid-feedback">
+                                Trường này bắt buộc nhập!
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label>Đại lý</label>
+                            <select id="agency-selection" class="form-control" required name="agency_id" data-live-search="true" style="width: 100%"></select>
                             <div class="invalid-feedback">
                                 Trường này bắt buộc nhập!
                             </div>
@@ -170,22 +157,17 @@ require APPROOT . '/views/base/nav.php';
                         </div>
 
                         <div class="form-group row">
-                            <label>Số lượng nhập</label>
-                            <input type="text" class="form-control" name="number_of_imported_goods">
+                            <label>Số lượng sales</label>
+                            <input type="number" class="form-control" name="number_of_sale_goods" required>
                             <div class="invalid-feedback">
                                 Trường này bắt buộc nhập!
                             </div>
                         </div>
-
-                        <!-- <div class="form-group row">
-                            <label>Số lượng tồn</label>
-                            <input type="text" class="form-control" name="number_of_remaining_goods">
-                        </div> -->
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" id="add_inventory" class="btn btn-success" data-dismiss="modal">Thêm</button>
-                        <button type="button" id="cancel_add_inventory" class="btn btn-secondary mr-1" data-dismiss="modal">Huỷ</button>
+                        <button type="button" id="add_agency_sale" class="btn btn-success" data-dismiss="modal">Thêm</button>
+                        <button type="button" id="cancel_add_agency_sale" class="btn btn-secondary mr-1" data-dismiss="modal">Huỷ</button>
                     </div>
                 </form>
             </div>
@@ -197,20 +179,21 @@ require APPROOT . '/views/base/nav.php';
 
         <script>
             $(function() {
-                // var toast = new Toasty();
-                $('#table_inventories').DataTable({
+                $('#table_agency_sales').DataTable({
                     responsive: true,
                     ordering: false,
                 });
 
-                $('#table_inventories tbody tr td:not(.not-editable)').editable({
+                $('#table_agency_sales tbody tr td:not(.not-editable)').editable({
                     send: 'always',
                     type: 'text',
-                    url: "<?php echo URLROOT; ?>" + "/inventories/update",
+                    url: "<?php echo URLROOT; ?>/employee-sales/update",
                     params: function(params) {
                         var state = $(this).attr('data-state');
+                        var agencyId = $(this).attr('data-agency-id');
                         params.year = 2021;
                         params.state = state;
+                        params.agency_id = agencyId;
 
                         return params;
                     },
@@ -252,11 +235,31 @@ require APPROOT . '/views/base/nav.php';
                     }
                 });
 
-                $('#add_inventory').on('click', function(e) {
+                $('#agency-selection').select2({
+                    placeholder: 'Chọn đại lý',
+                    ajax: {
+                        url: "/agencies/search",
+                        dataType: 'json',
+                        delay: 250,
+                        type: "POST",
+                        data: function(data) {
+                            return {
+                                query: data.term // search term
+                            };
+                        },
+                        processResults: function(response) {
+                            return {
+                                results: response
+                            };
+                        },
+                    }
+                });
+
+                $('#add_agency_sale').on('click', function(e) {
                     e.preventDefault();
 
                     //Fetch form to apply custom Bootstrap validation
-                    var form = $("form[name=add_inventory]");
+                    var form = $("form[name=add_agency_sales]");
 
                     if (form[0].checkValidity() === false) {
                         e.stopPropagation()
@@ -268,15 +271,15 @@ require APPROOT . '/views/base/nav.php';
 
                     if (form[0].checkValidity()) {
                         $.ajax({
-                            url: "<?php echo URLROOT; ?>/inventories/create",
-                            type: "POST",
+                            url: "<?php echo URLROOT; ?>/employee-sales/create",
                             data: data,
+                            type: 'post',
                             success: function(response) {
                                 var response = JSON.parse(response);
                                 if (response.success) {
                                     location.reload();
                                     toastr.success("Cập nhật thành công!");
-                                    $("form[name=add_inventory]").trigger("reset");
+                                    $("form[name=add_agency_sales]").trigger("reset");
                                 } else {
                                     toastr.error("Cập nhật không thành công!");
                                 }
@@ -286,9 +289,9 @@ require APPROOT . '/views/base/nav.php';
 
                 })
 
-                $('#cancel_add_inventory').on('click', function(e) {
+                $('#cancel_add_agency_sale').on('click', function(e) {
                     e.preventDefault();
-                    $("form[name=add_inventory]").trigger("reset");
+                    $("form[name=add_agency_sales]").trigger("reset");
                 })
 
 

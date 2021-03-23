@@ -50,6 +50,17 @@ class Controller
         }
     }
 
+    public function initAgencyOptionsByASM()
+    {
+        if (isset($_SESSION['user_id']) && !isset($_SESSION['agencyOptions'])) {
+            require_once 'app/models/Agency.php';
+
+            $instance = new Agency();
+            $options = $instance->getAgencyOptions($_SESSION['user_id']);
+            $_SESSION['agencyOptions'] = $options;
+        }
+    }
+
     public function model($model)
     {
         //Require model file
