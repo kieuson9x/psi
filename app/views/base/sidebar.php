@@ -25,5 +25,39 @@
                                 </li>
                         <?php endif; ?>
                 <?php endif; ?>
+
+                <?php if (isset($_SESSION['user_id'])) : ?>
+                        <?php
+                        $i = array_search($_SESSION['level_id'], array_column($_SESSION['employeeLevelOptions'], 'value'));
+                        $element = ($i !== false ? $_SESSION['employeeLevelOptions'][$i] : null);
+                        $title = data_get($element, 'title');
+
+                        if ($title == 'Tài chính' || $title == 'Admin') :
+                        ?>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo URLROOT . "/inventories" ?>">
+                                                <i class="material-icons" style="font-size: 13px">inventory_2</i>
+                                                Bảng nhập tồn kho
+                                        </a>
+                                </li>
+                        <?php endif; ?>
+                <?php endif; ?>
+
+                <?php if (isset($_SESSION['user_id'])) : ?>
+                        <?php
+                        $i = array_search($_SESSION['level_id'], array_column($_SESSION['employeeLevelOptions'], 'value'));
+                        $element = ($i !== false ? $_SESSION['employeeLevelOptions'][$i] : null);
+                        $title = data_get($element, 'title');
+
+                        if ($title == 'Quản lý khu vực' || $title == 'Admin') :
+                        ?>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo URLROOT . "/inventories" ?>">
+                                                <i class="material-icons" style="font-size: 13px">inventory_2</i>
+                                                Bảng nhập nhập số sales
+                                        </a>
+                                </li>
+                        <?php endif; ?>
+                <?php endif; ?>
         </ul>
 </nav>

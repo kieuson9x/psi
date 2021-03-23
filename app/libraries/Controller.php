@@ -4,7 +4,7 @@ class Controller
 {
     public function initEmployeeLevelOptions()
     {
-        if ($_SESSION['user_id'] && !isset($_SESSION['employeeLevelOptions'])) {
+        if (isset($_SESSION['user_id']) && !isset($_SESSION['employeeLevelOptions'])) {
             require_once 'app/models/EmployeeLevel.php';
 
             $employeeLevel = new EmployeeLevel();
@@ -17,7 +17,7 @@ class Controller
 
     public function initBusinessUnitOptions()
     {
-        if ($_SESSION['user_id'] && !isset($_SESSION['businessUnitOptions'])) {
+        if (isset($_SESSION['user_id']) && !isset($_SESSION['businessUnitOptions'])) {
             require_once 'app/models/BusinessUnit.php';
             $instance = new BusinessUnit();
             $options = $instance->getLevelOptions();
@@ -28,7 +28,7 @@ class Controller
 
     public function initIndustryOptions()
     {
-        if ($_SESSION['user_id'] && !isset($_SESSION['industryOptions'])) {
+        if (isset($_SESSION['user_id']) && !isset($_SESSION['industryOptions'])) {
             require_once 'app/models/Industry.php';
 
             $instance = new Industry();
@@ -40,7 +40,7 @@ class Controller
 
     public function initProductTypeOptions()
     {
-        if ($_SESSION['user_id'] && !isset($_SESSION['productTypeOptions'])) {
+        if (isset($_SESSION['user_id']) && !isset($_SESSION['productTypeOptions'])) {
             require_once 'app/models/ProductType.php';
 
             $instance = new ProductType();

@@ -143,7 +143,12 @@
 }
 
 .navbar.default-layout .navbar-brand-wrapper {
-  background: #1c45ef;
+  background: #56CCF2;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#2F80ED), to(#56CCF2));
+  background: linear-gradient(to right, #2F80ED, #56CCF2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 250px;
   height: 63px;
   border-bottom: 1px solid white;
@@ -213,8 +218,12 @@
 
 .sidebar {
   min-height: calc(100vh - 63px);
-  background: -webkit-gradient(linear, left bottom, left top, from(#5768f3), to(#1c45ef));
-  background: linear-gradient(to top, #5768f3, #1c45ef);
+  background: #56CCF2;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#2F80ED), to(#56CCF2));
+  background: linear-gradient(to right, #2F80ED, #56CCF2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   font-family: "roboto", sans-serif;
   padding: 0;
   width: 250px;
@@ -438,5 +447,19 @@ table tr td.normal-green {
 
 table tr td:first-child.not-editable {
   background: #bbbbbb;
+}
+
+.container-login {
+  background: #005AA7;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left top, right top, from(#FFFDE4), to(#005AA7));
+  background: linear-gradient(to right, #FFFDE4, #005AA7);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+}
+
+.modal-content .form-horizontal {
+  margin-bottom: 0px;
 }
 /*# sourceMappingURL=app.css.map */

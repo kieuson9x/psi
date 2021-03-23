@@ -16,7 +16,7 @@ require APPROOT . '/views/base/nav.php';
                 <div class="col-md-12 grid-margin">
                     <div class="card">
                         <div class="p-4 border-bottom bg-light">
-                            <h4 class="card-title mb-0">Bảng nhập sản phẩm</h4>
+                            <h4 class="card-title mb-0">Bảng nhập tồn kho</h4>
                         </div>
                         <div class="card-body">
                             <form id="year-selection" method="GET" action="<?php echo URLROOT; ?>/inventories/index">
@@ -128,7 +128,6 @@ require APPROOT . '/views/base/nav.php';
         </div>
     </div>
 
-    {{-- Thêm mới --}}
     <div id="addProductPlanModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">

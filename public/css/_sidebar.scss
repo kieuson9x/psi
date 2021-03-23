@@ -1,6 +1,10 @@
 .sidebar {
     min-height: calc(100vh - 63px);
-    background: linear-gradient(to top, #5768f3, #1c45ef);
+    background: #56CCF2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    // background: linear-gradient(to top, #5768f3, #1c45ef);
     font-family: "roboto", sans-serif;
     padding: 0;
     width: 250px;
